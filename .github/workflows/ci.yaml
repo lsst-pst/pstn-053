@@ -43,4 +43,5 @@ jobs:
           LTD_PASSWORD: ${{ secrets.LTD_PASSWORD }}
           LTD_USERNAME: ${{ secrets.LTD_USERNAME }}
         run: |
-          lander --upload --pdf PSTN-053.pdf --ltd-product pstn-053
+          lander --upload --pdf PSTN-053.pdf --ltd-product pstn-053 --title "Survey Cadence Optimization Committee’s Phase 1 Recommendation" --handle "PSTN-053" --author "Zeljko Ivezic"
+
