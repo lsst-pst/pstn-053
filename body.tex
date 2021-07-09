@@ -1,166 +1,279 @@
-\section{Introduction}
+\section{Background and SCOC Process}
 
-{\bf Eventually, please replace all of the remaining text with your paper text.}
+The core observing strategy for LSST is to cover the entire visible sky repeatedly every few  
+in multiple bandpasses over the course of ten years. The main survey (wide-fast-deep, WFD), with a design area of about 18,000 square degrees observed under a wide range of conditions to faint co-added limiting magnitudes in ugrizy bandpasses, will enable dark energy and dark matter cosmological studies and studies of the Milky Way structure with unprecedented precision; the same survey, when cadenced well, can serve to open new windows into our understanding of transient sources and variable stars, and extend our knowledge of small bodies throughout the Solar System. The majority of available observing time will be spent on WFD; per LSST Science Requirements Document (SRD, ls.st/srd) of the order 10\% of time will be spent on programs designed to maximize the science outcome of LSST by exploring parameter space different from WFD. 
+
+The basic necessary requirements to reach LSST science goals are listed in the SRD. A 
+practical implementation of the observing strategy has more tunable parameters than specified in the SRD, thus leaving significant flexibility in the detailed cadence of observations. In order to maximize the science potential of LSST, the Rubin Observatory construction and early operations teams have been collaborating with the LSST science community and other stakeholders from the start of the project using a number of methods. They include a living collaborative document named the Community Observing Strategy Evaluation Paper, solicited Cadence White Papers and recent Cadence Notes, numerous performance metrics used to evaluate simulated surveys, and guidance from the LSST Science Advisory Committee (SAC) and SCOC. This pioneering process of community-focused experimental design is discussed in more detail by Bianco et al. (2021, XXX). 
+
+The current LSST baseline cadence strategy is an existence proof that LSST dataset can be 
+delivered as designed and advertised (for more details, see sections 2.1.5, 2.2.2 and 3.1 in the LSST overview paper, ls.st/lop). The simulations explored in the Fall 2020 Cadence Report 
+(PSTN-051, https://pstn-051.lsst.io) offered variations on this survey strategy in an attempt 
+to further enhance the baseline science yield from LSST. It is worth emphsizing that this 
+optimization is essentially fine tuning, rather than starting from scratch - anticipated gains
+for various metrics are closer to 10\% than, e.g., a factor of two. Based on analysis to date, it is 
+expected that science enhancements can be accomplished by varying at least some of the 
+fundamental survey parameters, including: i) survey footprint and distribution of visits, 
+ii) exposure time per visit, iii) allocation of observing time per band (the distribution of visits 
+between filters), and iv) time sampling (cadence) and dithers (on timescales from nightly to 
+monthly to yearly). 
+
+In order to facilitate the final phase of cadence optimization before the start of the 10-year 
+survey, the SCOC was formed in 2020 (for membership, see the end of this document). The 
+SCOC is an advisory  body to the Rubin Observatory  Operations  Director and it will be a 
+standing committee throughout the duration of LSST. Chaired by the Head of Science for LSST, it will follow the progress of LSST and further optimize its observing strategy. The SCOC is responsible for optimizing the LSST cadence  within the constraints imposed by the observing system, observing conditions, science drivers, and scientists invested in its mission and legacy. Its principal immediate tasks are to make specific recommendations for the initial survey strategy for the full 10-year survey, and to disseminate these recommendations via public reports and on-going engagement with the community. 
+
+The remaining cadence optimization process prior to the start of operations is divided into two phases. The goal of phase 1 is to narrow the choice of many different strategy options presented in the Fall 2020 LSST Cadence Optimization Report by making decisions about a few undecided optimization parameters, and by providing recommendations for the next generation of simulations, including new baseline cadence. The draft phase 1 recommendation (this document) will be presented to stakeholders at the Project and Community Workshop in August 2021. After a workshop in November (Nov 16-17, 2021), when the SCOC hopes to receive feedback from all the stakeholders about the draft phase 1 recommendation, the recommendation will be finalized and broadly distributed before the end of calendar year 2021. 
+
+The finalized document will serve as a guide for the concluding round of survey cadence 
+simulations. These simulations will begin prior to the November 2021 workshop and are expected to be completed during early calendar year 2022. Their analysis will inform the phase 2 survey strategy recommendation which will define the baseline strategy for starting LSST. The phase 2 SCOC recommendation, and corresponding simulated baseline survey, will be delivered to the Rubin Observatory Operations Director before the end of calendar year 2022. 
+
+The goal of phase 2 is to finalize the optimization of new baseline cadence recommended
+in phase 1 report so that the adopted startegy can be implemented in the observatory 
+control system and tested during commissioning phase. It is expected that commisioning 
+tests of the scheduling system will be undertaken during 2023, and that the operations 
+phase will begin some time in 2024.
+
+
+\section{Phase 1 SCOC recommendations}
+
+As a follow up to the Fall 2020 LSST Cadence Optimization Report and subsequent simulated 
+surveys analysis by the LSST Science Collaborations, the SCOC solicted and received 39 
+Cadence Notes in April 2021 (available as ls.st/doc-37579). The call for Cadence Notes 
+(ls.st/cadencenotes) aimed to fill additional gaps in metric coverage and get feedback on the 
+existing large set of simulations, based on responses to seven specific questions. Below we 
+list summary findings for each of these questions and resulting SCOC recommendations, 
+followed by a detailed description of the next generation of survey simulations derived from 
+these recommendations. 
+
+
+Q1: Are there any science drivers that would strongly argue for, or against, increasing the WFD footprint from 18,000 sq. deg. to 20,000 sq.deg.? Note that the resulting number of visits per pointing would drop by about 10\%. If available, please mention specific simulated cadences, and specific metrics, that support your answer. 
+ 
+Findings and recommendations:
+
+The main tension that emerged from the submitted notes was between Galactic and 
+extragalactic science. The various community’s requests can be satisfied by considering the main survey (WFD) to be composed of a low-extinction extragalactic survey and a Galactic survey, and additionally ensuring coverage of the North Ecliptic Spur (NES). The footprint for the extragalactic part of the main survey will be motivated by the maximum acceptable value of the dust extinction, rather than by a simple boundary in galactic coordinates as done originally. In addition, the extragalactic sky will be limited using two Declination limits (to be set later after a number of simulations with varied Dec limits, and perhaps more than one value of maximum acceptable dust extinction, are produced and analyzed). The cadence for the Galactic plane may need to be modified/optimized, too. Once the new baseline simulation is produced, an alternative simulation where each visit will consist of a single exposure (so-called snap, as opposed to two in baseline cadence) will also be produced and analyzed.
+
+
+Q2: Assuming that current system performance estimates will hold up, we plan to utilize the additional observing time (which may be as much as 10\% of the survey observing time) for visits for the mini surveys and the DDFs (with an implicit assumption that the main WFD survey meeting SRD requirements will always be the first priority). What is the best scientific use of this time?   
+
+Findings and recommendations:
+ 
+The 10\% gain of the effective survey observing time is still hypothetical at this time. Potential
+enhanced performance could be due to delivered system throughput larger than the nominal 
+design value, a recoverable 8\% efficiency drop due to two-snaps strategy, low solar activity
+resulting in darker night sky background, etc). However, it is also possible that the delivered 
+performance will be lower than nominal, although this possibility has not been quantitatively 
+explored yet.
+
+There is no broad consensus for the 10\% usage between different science groups, although 
+there is reasonable consistency within science groups; for example, cosmological drivers point to extending low-extinction footprint, while Galactic science drivers argue for better Galactic plane and Magellanic cloud coverage. It is noteworthy that enhanced DDF coverage remains critical for better understanding of the WFD.
+
+A number of "proposals" were submitted in response to the 2019 Cadence White Paper Call 
+that were deemed "small" because the implied use of observing time is at the level of about 
+1\% or less. There are ten such proposals that were deemed viable during the 
+evaluation of white papers by the SAC, and that are not addressed by baseline cadence:
+             -- short description --                                       -- obs. time --
+1) short twilight visits for near-Sun objects incl. NEOs         1-3\%
+2) ToO follow-up to ID counterparts to GW sources             1-2\% 
+3) mini-survey/DDF of Roman microlensing bulge field         ~2\%
+4) Limited-visit survey of sky to Dec < +30                              1\%
+5) static short exposure map of sky in ugrizy (twilight?)        ~1\%
+6) static to transient short exposure survey                          1-5\%
+7) mini-survey of the virgo cluster to WFD depth                   ~1\%
+8) deeper g-band imaging of ~ 10 local volume galaxies      0.3\%
+9) high cadence survey of ~2 fields in SMC for microlenses 0.3\%
+  
+Together, they correspond to about 12\% of observing time. The SAC recommends to produce 11 simulations analogous to baseline cadence where these proposals are included both individually and all together, and to analyze them to assess the impact of their inclusion on various science performance metrics. Once this information is available, the final decision 
+about these proposals can be included in phase 2 recommendations. It is noteworthy that 
+there are no compelling reasons why any of these proposals must be attempted during the 
+first year of operations, when the system performance might not be completely quantified. 
+
+
+Q3:  Are there any science drivers that would strongly argue for, or against, the proposal to 
+change the u band exposure from 2x15 sec to 1x50 sec? 
+
+Findings and recommendations:
+
+Due to dark sky in the u band, the impact of read-out noise is the largest in this band. If 
+the u band exposure time changed from 2x15 sec to 1x50 sec, the single visit u band depth 
+would improve by 0.5-0.6 mag. In other words, the increase of per-visit time (with overheads) from 39 sec (15+1+2+15+1+5, where 1 sec is for shutter motion, 2 sec for the first readout, with the second readout include in the typical slew time of 5 sec) to 56 sec (50+1+5), or by 44\%, would correspond effectively to an increase of observing time by almost a factor of 3 using the square root of time scaling of limiting magnitude (which is approximately correct in other bands). 
+
+In the nominal per-band observing time allocation, the u band receives 56 visits out of 825 visits for all bands (about 7\% of total time). If the total time allocated to the u band were kept constant, the resulting number of visits would drop to 39. If instead the number of visits were kept constant, the additional 3-4\% of total observing time would have to be reallocated from other bands. For example, if 2\% of total observing time would be taken from the g and r bands, which are each allocated 22\% of total, the net relative effect for these bands would be about 10\% decrease in the number of visits (or equivalently about 0.08 single visit depth loss if the exposure time per visit was decreased by 2\% with the number of visits unchanged). 
+
+The main science drivers for deeper u band data are photometric redshift estimates for
+galaxies and photometric metallicity estimates for stars earlier than MK spectral type K. 
+
+The SCOC recommends that the u band visits include only a single snap. There should be two flavors of new baseline simulations: with 1x30 sec and 1x50 sec exposures, with the latter exploring both unchanged number of visits and unchanged total observing time in the u band. Aided by analysis of these simulations, the final choice will be left to phase 2 optimization. The key question will be whether additional time allocated to the u band with 1x50 sec exposures will have unacceptable impact on observations in the g band (and possibly in the r band). We note that it is plausible that the ultimate choice could depend on galactic latitude (e.g. WFD vs. galactic mini-surveys). 
+ 
+
+Q4:  Are there any science drivers that would strongly argue for, or against, further changes
+in observing time allocation per band (e.g., skewed much more towards the blue or the red 
+side of the spectrum)?  
+
+Findings and recommendations:
+
+There are no strong arguments for significantly changing default per-band allocation of observing time. In order to quantitatively gauge the impact of changing per band allocation, a small number of new simulations will be produced by modifying the new baseline to produce a larger number of visits in the g band for the main survey. Detailed per-band optimization of specific programs, such as the North Ecliptic Spur and Galactic plane, will be left for phase 2 optimization of adopted baseline strategy. 
+
+
+Q5:  Are there any science drivers that would strongly argue for, or against, obtained two 
+visits in a pair in the same (or different) filter? Or the benefits or drawbacks of dedicating 
+a portion of each night to obtaining a third (triplet) visit?    
+
+Findings and recommendations:
+
+If two visits in a nightly pair are obtained in the same filter, we can reliably measure brightness derivative on hourly time scales and quickly identify very exotic transients (those with dm/dt $> $1 mag/hr, e.g. gamma-ray burst afterglows). On the other hand, visits in different filters would enable color measurement for sources that vary on longer time scales, e.g., for supernovae and tidal disruption events. 
+
+Based on provided science-driven input, the SCOC recommends that pairs of visits be obtained with different filters. There are two modifications of baseline strategy that should be quantitatively explored with new simulations: increase visit time separation after a few years (see Bellm et al. Cadence Note for details), and explore the so-called Presto-color idea (three visits per night). 
+
+  
+Q6:  Are there any science drivers that would strongly argue for, or against, the rolling cadence scenario? Or for or against varying the season length? Or for or against the AltSched N/S nightly pattern of visits? 
+
+Findings and recommendations:
+
+There are no strong arguments for giving up on the rolling cadence idea. Indeed, the current (not fully optimized) implementation shows gains for at least some science metrics (most notably cosmological supernovae), but it is likely that further optimization is possible. We note that we have more than 3 years before we have to deploy rolling cadence strategy (the first and last survey years would not use rolling cadence strategy to maximize the baseline for proper motions and long-term variability) and thus there is time for its detailed optimization. 
+
+The next-generation baseline should utilize the current best rolling cadence implementation (see https://pstn-052.lsst.io), and then continue optimizing it after the basic baseline strategy reaches some maturity. 
+
+A Tiger Team including the Project Cadence Optimization Team and Science Collaboration 
+members interested in rolling cadence (including but not limited to Cadence Notes authors Graham, Frohmeier, Hernitschek, Schwamb, Lochner, Bellm) will discuss efficient computation of metrics for the latest family of simulations, and potentially additional modified rolling cadence simulations; we are hopeful for more quantitative results by the time of November workshop, with some results possibly ready by PCW2021).  
+
+
+Q7:  Are there any science drivers pushing for or against particular dithering patterns 
+(either rotational dithers or translational dithers?)  
+
+Findings and recommendations:
+
+We note that small camera rotations are executed in all sims in order to align the two visits from a pair, and visits to deep drilling fields. There are several metrics used in simulated cadence analysis that are sensitive to dithering and rotation angle uniformity (e.g. the Kuiper metric for the latter). 
+
+There are no strong arguments for changing the implemented dithering pattern. We note that, however, it is possible that weak lensing systematics will require a different scheme but details will not be known until some commissioning data are in hand and analyzed. The Project needs to assure that tools needed to respond on an adequate time scale will be available by the start of commissioning. 
+ 
+
+\section{Phase 2.0 Survey Simulations}
+
+The next phase of survey strategy simulations consist of a limited set of survey strategy variations, evolving from the strategies tested in phase 1 (simulations in releases v1.5 to v1.7.1, described in PSTN-051). These simulations respond to the findings above from the SCOC and will be released as a group in v2.0. 
+
+\subsection{Baseline: }
+This is an update of the baseline survey plan. Further details will remain to be optimized, but there is a clear mandate to move to a new survey footprint. The updated footprint can generally be described as consisting of 
+\begin{itemize}
+\item A ‘extragalactic’  WFD region defined by north and south declination limits (approximately -62 to 12 degrees) and a dust-extinction limit (approximately E(B-V) = 0.2)
+\item Additional WFD-level regions defined by the locations of the Magellanic Clouds and an area of high stellar density in the galactic bulge 
+\item Coverage of the remainder of the galactic plane
+\item Coverage of the northern ecliptic spur to match the ecliptic plane beyond the WFD footprint
+\item Coverage of the remainder of the southern celestial pole region
+\end{itemize}
+Visits in grizy bands will be 2x15s, while visits in u band will be 1x30s. During twilight, we will take visits in pairs with a 15 minute separation. During the remainder of the night, visits will be in pairs with 33 minute separation (with mixed filters between the pair).  
+In the extragalactic (dust-extinction limited) WFD, a 2-band declination defined rolling cadence will be implemented at approximately 90\% strength. The rolling cadence starts in approximately year 1.5 and ends at approximately year 8.5, to allow uninterrupted coverage of the entire sky in the first and last years of the survey. 
+
+Items to be left for the next stage of survey strategy tuning include details of the survey footprint definition such as the exact declination or dust extinction limits for the extragalactic WFD or the exact definition of the limits for the bulge WFD region, details of the filter balance in each region, and the definition of which different filters should be used in pairs of visits.
+
+\subsection{Retro (comparison):}
+These runs are intended to serve as a comparison point with previous simulations, to allow easier comparison of metrics between versions of the scheduler/simulation.
+\begin{itemize} 
+\item Classic ‘traditional’ survey footprint and v2.0 settings - a halfway point between the classic footprint and the updated variations in the new simulations. Uses the s tandard ‘traditional’ survey footprint used in baselines from v1.5 to 1.7.1, 2x15s visits in grizy and 1x30s in u band, 2-band rolling cadence in WFD.
+\item Classic ‘traditional’ v1.5-v1.7.1 survey footprint and v1.7.1 settings. This run would be directly comparable to baseline\_nexp2\_v1.7.1\_10yrs, but run with the newest version of the simulator. Uses the standard ‘traditional’ survey footprint used in baselines from v1.5 to 1.7.1, 2x15s visits in all bands, no rolling cadence.
+\end{itemize}
+
+\subsection{Rolling Cadence:}
+These simulations add variations on the rolling cadence implementation. This is one of the largest areas that remains undecided with the new survey strategy. Metrics indicate that 2-band rolling cadence can significantly improve SN detection in the extragalactic WFD, so a 2-band rolling cadence has been implemented in that region in the baseline. However, rolling cadence in the galactic bulge or other minisurvey regions is not as clear. In addition to varying what regions and what fraction of the sky has rolling cadence, the strength of the rolling cadence is varied in this family. All simulations will use the updated baseline footprint and visit timings. For all the rolling simulations and the baseline, we do not do any rolling in the SCP, NES, or lower visit Galactic Plane area. Rolling does happen in the high-visit bulge and any outer Galactic bridge.
+\begin{itemize}
+\item No rolling cadence anywhere (in comparison to the 2-band rolling cadence in the baseline). 
+\item 2-band rolling cadence at 50\% strength
+\item 2-band rolling cadence at 90\% strength 
+\item 3-band rolling cadence at 50\% strength
+\item 3-band rolling cadence at 90\% strength
+\item 6-band rolling cadence at 50\% strength
+\item 6-band rolling cadence at 90\% strength
+\item A stretch goal of 2-band rolling cadence in the low-dust extinction area, and 6-band rolling in the bulge area
+\end{itemize}
+Note that in each of these rolling cadence simulations ‘2-band’ is referring to the fraction of the sky which is ‘active’ in rolling at any time. 2-band means ½ of the sky is rolling; 3-band means ⅓ of the sky is rolling. In each of these cases, the active sky area is further split into a North and South region, to better manage alert follow-up. 
+
+\subsection{Longer u-band visits:}
+The u-band visit time in the baseline is 1x30s, to avoid the penalty from read-noise for 2x15s snaps in u where this is most impactful. This family varies the visit time for u band to 1x50s, with two options on top of the baseline survey: 
+\begin{itemize}
+\item Longer u-band visit time, and approximately the same number of visits in u as in the baseline. This requires more survey time to be spent on u-band, so a few \% of time is removed from other bandpasses (altering the filter balance slightly). 
+\item Longer u-band visit time, but the same relative amount of survey time. This reduces the number of visits in u-band accordingly.
+\end{itemize} 
+
+\subsection{NES visits:}
+The number of visits per pointing (and corresponding fraction of overall survey time) for the Northern Ecliptic Spur is varied in this family of simulations. The overall survey footprint remains the same and the time added or removed from the NES relative to the baseline is spent in the extragalactic and bulge WFD regions. The goal number of visits per pointing in the NES is approximately 400 in the baseline. This family adds three additional variations:
+\begin{itemize}
+\item Approximately 200 visits per pointing in the NES
+\item Approximately 300 visits per pointing in the NES
+\item Approximately 500 visits per pointing in the NES
+\end{itemize}
+
+\subsection{GP visits: }
+The number of visits per pointing (and the corresponding fraction of overall survey time) for the non-bulge regions of the galactic plane is varied in this family of simulations. The overall survey footprint remains the same and the time added or removed from the GP region is spent in the extragalactic and bulge WFD regions. The goal number of visits per pointing in the non-bulge GP is approximately 300 in the baseline. This family adds two additional variations: 
+\begin{itemize}
+\item Approximately 180 visits per pointing in the non-bulge GP
+\item Approximately 350 visits per pointing in the non-bulge GP
+\end{itemize}
+
+\subsection{Deep Drilling fraction:}
+The fraction of time spent on DD fields has been held constant at about 5\% evenly spread over the 5 DDF pointings in simulations v1.5 - 1.7.1. This family keeps the baseline survey strategy, but modifies the fraction of time spent on DDFs (the remainder of the survey footprint varies evenly up or down as the DDF fraction changes).
+\begin{itemize}
+\item 3\% time for DDF
+\item 8\% time for DDF
+\item 2 of the DDFs will be chosen to roll on/off on alternating years 
+\end{itemize}
+
+\subsection{Presto Color:}
+The presto-color family could potentially cover a wide range of variations. The baseline survey strategy is modified so that triplets of visits are obtained in some nights, adding a third visit in a filter used earlier in the night in a pair. The triplet visit will occur at a 90-120 minute interval from the *second* visit in the pair. As more visits are obtained in triplets, the overall number of visits per pointing or season length does not change; this drives the inter-night gap to slightly longer intervals. The strategy for adding these triplets varies among these simulations, but otherwise the baseline survey strategy remains (including the filter choices in the pairs of visits).
+\begin{itemize}
+\item Triplets are obtained in only the first year
+\item Triplets are obtained for approximately 10\% of the time in all years
+\item Triplets are obtained for approximately 20\% of the time in all years
+\item Triplets are obtained for approximately 30\% of the time in all years
+\end{itemize}
+
+\subsection{Long Gaps:}
+In order to evaluate the impact of longer gaps between pairs of visits, but not impact the discovery of solar system objects in the early years of the survey, this simulation adds variable times (from 2-14 hours) between visit pairs starting in year five. 
+\begin{itemize}
+\item Variable visit spacing between 2-14 hours after year 5 for 100\% of visits
+\item Variable visit spacing between 2-14 hours after year 5 for 50\% of visits
+\end{itemize}
+
+
+\subsection{Micro surveys: }
+There are a large number of ‘micro’ surveys which were defined in the Cadence White Papers of 2018, some of which were useful to simulate as part of the overall survey strategy. There are about 9 such micro surveys detailed in those white papers, listed above. This family would adopt the new baseline survey strategy and then attempt to fold in each of these micro surveys individually and then all-together.  The details of the simulations in this family are generally not well constrained, and may result in multiple simulations aimed at similar goals. The updated baseline survey strategy will be maintained, and the micro survey(s) added into the survey strategy, with an even cost across the remainder of the survey. 
+\begin{itemize}
+\item Short twilight visits for near-Sun objects incl. NEOs (similar to the twilight\_NEO family in v1.7)
+\item ToO follow-up to identify optical counterparts of gravitational wave sources 
+\item Micro survey of Roman microlensing bulge field
+\item Addition of a northern stripe with a limited number of visits in ugrizy from the upper limit of the survey footprint to Dec=30
+\item Single short (5s) exposure survey of the sky in ugrizy in year 1 for static sky calibration
+\item Multiple short exposures of the sky in ugrizy at a range of times for transient detection and static sky calibration 
+\item Micro survey of the Virgo Cluster
+\item Deeper g-band imaging of 10 local volume galaxies
+\item High cadence visits of 2 fields in the SMC for microlensing
+\item All of the micro surveys 
+\end{itemize}
+
+
+The survey simulations outlined above are our best estimates of what these variations will encompass, with an approximation of the total number of simulations. We may need to  modify these descriptions or add additional simulations, when generating the set of v2.0 simulations. 
+ 
+ 
 \vskip 0.4in
 
+\newcolumntype{L}{>{}p{0.6\columnwidth}}
 
-The LSST Construction Project team needs to document the as-built hardware and software
-(see LSE-79 and LSE-390 for details). Although this activity will likely continue well into the operations phase, the majority 
-of anticipated documents will be necessary to enable efficient and robust early science with the LSST 
-facility and thus must be available, at least in a draft form, by the first data release. 
-
-As a first step, we are now assembling teams that will be in charge of delivering these documents.
-An initial paper list collated by subsystem leaders includes about 40 papers that will be submitted 
-to relevant professional journals. Therefore, this deliverable represents a major undertaking
-and we need to start early. In addition, the commissioning period will be shorter than anticipated 
-due to various delays in construction  and thus the time to complete these papers will be
-shorter, too. Although most of these papers cannot be finished before the end of construction 
-because they will require analysis of LSST commissioning data, we can significantly mitigate
-the risk that they will never be finished by starting early. The early start will also help 
-mitigate another source of stress for the team during the busy commissioning phase. 
-
- 
-\section{Initial Plan} 
-
-The subsystem leaders have assembled an initial list of papers, listed in Appendix. 
-It is likely that this list will evolve with time. 
-Each paper has an editor assigned to it. Each editor is meant to be a team leader
-who will be initially responsible for the completion of the assigned paper (or perhaps 
-until somone else from the team assumes this leadership role). The editor is not 
-necessarily the team member who will do most of the required work, or who will 
-eventually become the first author. Both issues will be handled by on an individual team basis. 
-
-\subsection{The timeline} 
-
-We would like to have all the sections that do not depend on commissioning data 
-written and reviewed by February 2021. If we accomplish this goal, we will both
-have easier time completing these papers, and the team will be less stressed during
-the commissioning phase. 
-
-Our initial timeline is as follows (the further into the future, the less certain it is): 
-\begin{enumerate} 
-\item 
-Subsystem leads assemble the initial list of papers (DONE)
-\item
-Setup latex templates and email exploders (lsst-constrpapers) (DONE)
-\item
-Schedule the first telecon to discuss task, overall plan and timeline (Oct 2019).
-\item 
-Delivery of paper outlines and the second telecon (Jan 2020). Each paper
-outline should at least contain the list of all sections, their lead authors, and
-a few sentences about the section scope. Overachievers can add a list of figures etc.
-for extra credit. 
-\item
-First rough draft of sections that can be written without having the LSST commissioning
-data and the third telecon (June 2020). These drafts should at least include subsection
-structure, lists of planned tables, figures, rough text,  and identification of any impediments 
-to make the Oct. deadline for drafts ready for review (so that we can replan if need be). 
-\item 
-Sections that can be written without having the data ready for an internal project review and
-the fourth telecon (Nov 2020). 
-\item
-Reviews available and the fifth telecon (Feb 2021)
-\item
-Implementation of the reviewers' comments (from Feb 2021 until first light) 
-\item 
-Final drafts, including sections that depend on LSST data, available for
-review and the sixth telecon (Aug 2022)
-\item
-Implementation of the reviewers' comments (from Aug 2021 until the start of operations, 
-planned for Oct 3, 2022).  Proceeding with submissions, details TBD...
-\end{enumerate}
-
-
-
-
-\section{Some technicalities: author list and standard LSST references} 
-
-Thank you Tim Jenness and Wil O'Mullane for helping with templates! 
-
-\subsection{The LSST LaTeX Classes}
-
-Please see the installation instructions\footnote{\url{https://lsst-texmf.lsst.io/install.html}} 
-for lsst-texmf. Once you have it installed, you should be able to compile your paper
-using make. 
-
-\subsection{How to handle author list?} 
-
-Authors come from the authors.yaml file --  find the author ids in the lsst-texmf/etc/authordb.yaml - use db2authors to get the authors and institutes from the db. 
-
-{\bf XXX Wil, the above is unclear: need more detail about how to use db2authors,
-what is its output and what to do with it...} 
-
-
-\subsection{How to handle LSST standard references?} 
-
-The papers should cite standard LSST references\footnote{See \url{https://github.com/lsst-pst/LSSTreferences}}, 
-where appropriate. For the usage, please see below.  These examples all use the ADS handle, unless they are 
-project docs then the use the project handle like LSE-17.
-
-All are on the lsst-texmf which you can get from \url{http://lsst-texmf.lsst.io}
-
-
-\subsubsection{LSST System and Science}
-
-The LSST system (brief overview of telescope, camera and data management subsystems),
-science drivers and science forecasts are described in:
-
-\begin{itemize}
-\item LSST Science Requirements Document: \cite{LPM-17}.
-\item LSST overview paper: \cite{2008arXiv0805.2366I}.
-\item LSST Science Book: \cite{abell2009lsst}.
-\end{itemize}
-%------------------------------------------------------------------------------
-
-
-\subsubsection{Simulations}
-
-The LSST simulations are described in a series of papers. Use of the LSST simulations should cite the LSST simulations overview paper \cite{2014SPIE.9150E..14C} and the specific simulation tools used:
-
-\begin{itemize}
-\item LSST Catalogs (CatSim): \cite{2014SPIE.9150E..14C}
-\item Feature-Based Scheduler: \cite{2018arXiv181004815N}
-\item Operations Simulator (OpSim): Scheduler \cite{2016SPIE.9910E..13D}, SOCS \cite{2016SPIE.9911E..25R}
-\item Metrics Analysis Framework (MAF): \cite{2014SPIE.9149E..0BJ}
-\item Image simulations (Phosim): \cite{2015ApJS..218...14P}
-\item Sky brightness model: \cite{2016SPIE.9910E..1AY}
-\item LSST Performance for NEO (or moving object) discovery: \cite{2018Icar..303..181J}
-\end{itemize}
-%------------------------------------------------------------------------------
-
-
-\subsubsection{Data Management}
-
-LSST data management system and the data products are described in:
-
-\begin{itemize}
-  \item The LSST Data Management System: \cite{2015arXiv151207914J}
-  \item Data Products Definition Document: \cite{LSE-163}
-\end{itemize}
- %------------------------------------------------------------------------------
-
-
-\subsubsection{Camera}
-
-\begin{itemize}
-   \item Design and development of the LSST camera: \cite{2010SPIE.7735E..0JK}
-\end{itemize}
-%------------------------------------------------------------------------------
-
-
-\subsubsection{Telescope and Site}
-
-\begin{itemize}
-   \item Telescope and site overview and status in 2014:  \cite{2014SPIE.9145E..1AG}
-\end{itemize}
-%------------------------------------------------------------------------------
-
-\subsubsection{System Engineering}
-
-\begin{itemize}
-   \item LSST systems engineering: \cite{2014SPIE.9150E..0MC}
-   \item System verification and validation: \cite{2014SPIE.9150E..0NS}
-\end{itemize}
-%
-
-
+\begin{table}[]
+\begin{tabular}{l | L | l}
+Family               & Description       &    No. of sims.   \\
+\hline\hline
+Baseline            & Updated survey footprint, 2x15s visits in grizy and 1x30s in u, 2-band rolling in WFD. &   1     \\
+Retro comparison     & A comparison point to bridge the old footprint and simulations to the new footprint and updated simulations  & 2 \\
+Rolling cadence      & Variations on the rolling cadence   & 8  \\
+Longer u visits  &  In these simulations, the u-band visit time is extended to 1x50s    &    2 \\
+NES visits & Vary the fraction of time spent on the NES & 3 \\
+GP visits & Vary the fraction of time spent on the low-priority (non-bulge) regions of the GP & 2 \\
+Deep Drilling fraction & Vary the fraction of time for DDFs & 3 \\
+Presto Color & Add triplets of visits at varying times or fractions  & 4 \\
+Long visit gaps & Vary the visit pair time between 2-10 hours after year 5  &  2 \\
+Micro surveys & Add various micro-surveys from white papers  & 10 \\
+\hline
+ & Approximate total number of simulations &  37 \\
+\hline
+\end{tabular}
+\end{table}\label{tab:shortlist}
