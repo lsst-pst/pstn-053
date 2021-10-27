@@ -135,15 +135,15 @@ This simulation is an update of the baseline survey plan. Further numerical deta
 \begin{itemize}
 \item A low-dust-extinction WFD region defined by north and south declination limits (approximately -72 deg. to +12 deg.) and an interstellar dust extinction upper limit (approximately E(B-V) = 0.2, or AV~0.6 mag)
 \item Additional WFD-like regions defined by the locations of the Magellanic Clouds and an area of high stellar density in the Galactic bulge 
-\item Coverage of the remainder of the Galactic plane (GP) in a GP mini-survey
-\item Coverage of the northern Ecliptic spur (NES) to match the Ecliptic plane beyond the WFD footprint in a NES mini-survey
-\item Coverage of the remainder of the southern celestial pole (SCP) region in an SCP mini-survey
+\item Lower level coverage of the remainder of the Galactic plane (GP) in $ugrizy$
+\item Lower level coverage of the northern Ecliptic spur (NES) in $griz$ 
+\item Lower level coverage of the remainder of the southern celestial pole (SCP) in $ugrizy$
 \end{itemize}
 This would comprise the ‘core’ survey footprint area, together with the five Deep Drilling fields (DDF), as shown in Figure~\ref{fig:baseline_v2.0_footprint}. The location of four of these DDFs was announced in 2011, while the adoption of the fifth DDF, which matches the Euclid Deep Field South, was recommended by the Survey Advisory Committee and agreed by the Operations Director in 2020, pending demonstration of feasibility. 
 
-Visits in grizy bands will be 2x15s, while visits in u band will be 1x30s. During twilight, visits will be taken in pairs with a 15 minute separation, instead of in singles as in the v1.X series baselines. During the remainder of the night, visits will be in pairs with approximately a 33 minute separation (with mixed filters between the pair), instead of about 22 minute separations as in the v1.X series baselines.
+Visits in $grizy$ bands will be 2x15s, while visits in u band will be 1x30s. During twilight, visits will be taken in pairs with a 15 minute separation, instead of in singles as in the v1.X series baselines. During the remainder of the night, visits will be in pairs with approximately a 33 minute separation (with mixed filters between the pair), instead of about 22 minute separations as in the v1.X series baselines.
 
-In the extragalactic (i.e., dust-extinction limited) WFD, a 2-band rolling cadence defined by Declination will be implemented at approximately 90\% strength. The rolling cadence starts in approximately year 1.5 and ends at approximately year 8.5, to allow uninterrupted coverage of the entire sky in the first and last years of the survey. 
+In the extragalactic (i.e., dust-extinction limited) WFD, a 2-band rolling cadence defined by declination will be implemented at approximately 90\% strength. The rolling cadence starts in approximately year 1.5 and ends at approximately year 8.5, to allow uninterrupted coverage of the entire sky in the first and last years of the survey. 
 
 Some questions regarding the general baseline footprint which will be left for the next stage of survey strategy tuning include details of the survey footprint definition such as the exact Declination or dust extinction limits for the extragalactic WFD or the exact definition of the limits for the bulge WFD region, details of the filter balance in each region, and the definition of which different filters should be used in pairs of visits.
 
@@ -166,16 +166,19 @@ These runs are intended to serve as a comparison point with previous simulations
 \end{itemize}
 
 \subsection{Rolling Cadence:}
-These simulations add variations on the rolling cadence implementation. This is one of the largest areas that remains undecided with the new survey strategy. Many areas of science which may benefit from rolling cadence do not currently have quantitative metrics available. However, there is a metric related to SN detection, which indicates that a 2-band rolling cadence can significantly improve SN detection in the WFD, so a 2-band rolling cadence has been implemented in the low-extinction WFD region in the baseline. The impact of rolling cadence in the Galactic bulge or other mini-survey regions is not as clear, primarily due to a lack of relevant metrics. In addition to varying what regions and what fraction of the sky has rolling cadence, the strength of the rolling cadence is varied in this family. All simulations will use the updated baseline footprint and visit timings. For all the rolling simulations and the baseline, we do not do any rolling in the SCP, NES, or lower visit Galactic plane area. Rolling does happen in the galactic plane WFD region, although this may not necessarily be on the same cadence as the low-dust-extinction WFD region. 
+These simulations add variations on the rolling cadence implementation. This is one of the largest areas that remains undecided with the new survey strategy. Many areas of science which may benefit from rolling cadence do not currently have quantitative metrics available. However, there is a metric related to SN detection, which indicates that a 2-band rolling cadence can significantly improve SN detection in the WFD, so a 2-band rolling cadence has been implemented in the low-extinction WFD region in the baseline. The impact of rolling cadence in the Galactic bulge or other mini-survey regions is not as clear, primarily due to a lack of relevant metrics. In addition to varying what regions and what fraction of the sky has rolling cadence, the strength of the rolling cadence is varied in this family. All simulations will use the updated baseline footprint. 
 \begin{itemize}
-\item No rolling cadence anywhere (in comparison to the 2-band rolling cadence in the baseline). 
-\item 2-band rolling cadence at 50\% strength
-\item 2-band rolling cadence at 90\% strength 
-\item 3-band rolling cadence at 50\% strength
-\item 3-band rolling cadence at 90\% strength
-\item 6-band rolling cadence at 50\% strength
-\item 6-band rolling cadence at 90\% strength
-\item A stretch goal of 2-band rolling cadence in the low-dust extinction area, and 6-band rolling in the bulge area
+\item No rolling cadence anywhere (in comparison to the 2-band rolling cadence in the baseline) % noroll 
+\item 2-band rolling cadence at 50\% strength % rolling
+\item 2-band rolling cadence at 90\% strength % rolling
+\item 3-band rolling cadence at 50\% strength % rolling
+\item 3-band rolling cadence at 90\% strength % rolling
+\item 6-band rolling cadence at 50\% strength % rolling_six
+\item 6-band rolling cadence at 90\% strength % rolling_six
+\item 2-band rolling cadence, starting earlier than the baseline so an additional rolling season can be completed % roll_early
+\item Rolling also in the bulge (with the bulge divided in half) % rolling_bulge
+\item ROlling in the bulge and the high extinction galactic plane % rolling_all_sky
+\item Rolling in the bulge with 6 stripes % rolling_bulge_6
 \end{itemize}
 Note that in each of these rolling cadence simulations ‘2-band’ is referring to the fraction of the sky which is ‘active’ in rolling at any time. 2-band means ½ of the sky is rolling; 3-band means ⅓ of the sky is rolling. In each of these cases, the active sky area is further split into a North and South region, to better manage alert follow-up. 
 
@@ -194,13 +197,14 @@ This family increases the time spent primarily in g (and u) for the low-extincti
 \end{itemize}
 
 \subsection{NES visits:}
-The number of visits per pointing (and corresponding fraction of overall survey time) for the Northern Ecliptic Spur mini-survey is varied in this family of simulations. The overall survey footprint remains the same and the time added or removed from the NES relative to the baseline is spent in the WFD regions. The goal for the number of visits per pointing in the NES is approximately 260 in the baseline (which really reflects a fraction of 0.3 x visits relative to the WFD number of visits per pointing). This family adds about four additional variations:
+The number of visits per pointing (and corresponding fraction of overall survey time) for the Northern Ecliptic Spur mini-survey is varied in this family of simulations. The overall survey footprint remains the same and the time added or removed from the NES relative to the baseline is spent in the WFD regions. The goal for the number of visits per pointing in the NES is approximately 260 in the baseline (which really reflects a fraction of 0.3 x visits relative to the WFD number of visits per pointing). 
+
 \begin{itemize}
-\item Approximately 50\% visits per pointing in the NES
-\item Approximately 75\% visits per pointing in the NES
-\item Approximately 125\% visits per pointing in the NES
-\item Approximately 150\% visits per pointing in the NES
+\item runs varying the number of visits in the NES from 1\% to 100\% of the WFD fraction
 \end{itemize}
+
+
+
 
 \subsection{GP visits: }
 The number of visits per pointing (and the corresponding fraction of overall survey time) for the non-bulge regions of the Galactic plane (GP mini-survey) is varied in this family of simulations. The overall survey footprint remains the same and the time added or removed from the GP region is spent in the WFD regions. The goal number of visits per pointing in the non-bulge GP is approximately 230 (0.27 * WFD baseline visits per pointing)  in the baseline. This family adds two additional variations:
@@ -213,12 +217,8 @@ The number of visits per pointing (and the corresponding fraction of overall sur
 The fraction of time spent on DD fields has been held constant at about 5\% evenly spread over the 5 DDF pointings in simulations v1.5 - 1.7.1. This family keeps the baseline survey strategy, but modifies the fraction of time spent on DDFs (the remainder of the survey footprint varies evenly up or down as the DDF fraction changes).\begin{itemize}
 \item 3\% time for DDF
 \item 8\% time for DDF
-\item 2 of the DDFs will be chosen to roll on/off on alternating years
-\item DDF visits acquired with AGN cadence 
-\item DDF visits acquired with DESC cadence (see Lochner et al. Cadence Note)  
-\item Stretch goal: DDFs where one field is observed more heavily; {\it e.g.} COSMOS is at a different RA range than the other DDFs and may be more easily observable with a larger fraction of time. 
 \end{itemize}
-We note that the current implementation of DDF cadences is rather simplistic and requires further optimization, e.g., along the lines discussed in Lochner et al. Cadence Note. 
+We note that the current implementation of DDF cadences is rather simplistic and requires further optimization, e.g., along the lines discussed in Lochner et al. Cadence Note. Our future DDF scheduling will use Mixed Integer Programming, making it easier to specify detailed cadences as well as try rolling cadence with the DDFs.
 
 \subsection{Presto Color:}
 The presto-color family could potentially cover a wide range of variations. The baseline survey strategy is modified so that triplets of visits are obtained in some nights, adding a third visit in a filter used earlier in the night in a pair. The triplet visit will occur at a $>90$ minute interval from the *second* visit in the pair. As more visits are obtained in triplets, the overall number of visits per pointing or season length does not change; this drives the inter-night gap to slightly longer intervals; adding triplets for all visits throughout the survey is impractical for this reason, as it decreases for transients and variability. The strategy for adding these triplets varies among these simulations, but otherwise the baseline survey strategy remains (including the filter choices in the pairs of visits). This is a slightly different implementation of “triplet visits per night” than in the third\_obs family provided in the v1.5 release, with a more precise timing interval for the third visit in the night and a higher fraction of visits in ‘triplets’ (rather than more than triplets).
@@ -251,7 +251,6 @@ There are a large number of the so-called micro-surveys proposed in the 2018 whi
 \item Micro survey of the Virgo Cluster
 \item Deeper g-band imaging of 10 local volume galaxies
 \item High cadence visits of 2 fields in the SMC for microlensing
-\item All of the micro surveys 
 \end{itemize}
 
 The survey simulations outlined above are our best estimates of what these variations will encompass, with an approximation of the total number of simulations. These descriptions may be modified, and extended by additional simulations, when generating the set of v2.0 simulations. 
