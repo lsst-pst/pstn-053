@@ -116,7 +116,7 @@ There are no strong arguments for changing the implemented dithering pattern. We
 
 \section{Phase 2.0 Survey Simulations}
 
-The next phase of survey strategy simulations consists of a limited set of survey strategy variations, evolving from the strategies tested in phase 1 (simulations in releases v1.5 to v1.7.1, described in PSTN-051). These simulations respond to the above SCOC findings and will be released as a group in v2.0. The main goals for remaining optimization, to be enabled by these (and possibly additional) simulations,  include:
+The next phase of survey strategy simulations consists of a limited set of survey strategy variations, evolving from the strategies tested in phase 1 (simulations in releases v1.5 to v1.7.1, described in PSTN-051). These simulations respond to the above SCOC findings and have been released as a group in v2.0. The main goals for remaining optimization, to be enabled by these (and possibly additional) simulations,  include:
 \begin{itemize}
 \item{Finalize survey footprint definitions (e.g. the exact Declination and dust extinction 
             limits for  the WFD region, exact definition of the Galactic bulge region, see below for 
@@ -127,7 +127,7 @@ The next phase of survey strategy simulations consists of a limited set of surve
 \item{Optimize further DDF cadences }
 \end{itemize}
 
-Once these goals are achieved, the SCOC will focus on modifications of adopted observing strategy to enhance early science from LSST (defined here as ``science prior to Data Release 1''). Below, we describe the updated baseline simulation, followed by descriptions of proposed v2.0 simulations. 
+Once these goals are achieved, the SCOC will focus on modifications of adopted observing strategy to enhance early science from LSST (defined here as ``science prior to Data Release 1''). Below, we describe the updated baseline simulation, followed by descriptions of proposed v2.0 simulations. A more detailed description of the individual simulations available is online at \url{https://github.com/lsst-pst/survey_strategy/blob/main/fbs_2.0/SummaryInfo_v2.0.ipynb}, in the 'SummaryInfo_v2.0' notebook. 
 
 \subsection{Baseline 2.0}
 
@@ -209,19 +209,17 @@ We note that the current implementation of DDF cadences is rather simplistic and
 \subsection{Presto Color:}
 The presto-color family could potentially cover a wide range of variations. The baseline survey strategy is modified so that triplets of visits are obtained in some nights, adding a third visit in a filter used earlier in the night in a pair. The triplet visit goal gap is varied per run, with values of 1.5, 2.0, 2.5, 3.0, 3.5, and 4.0 hours. As more visits are obtained in triplets, the overall number of visits per pointing or season length does not change; this drives the inter-night gap to slightly longer intervals; adding triplets for all visits throughout the survey is impractical for this reason, as it decreases for transients and variability. This is a slightly different implementation of “triplet visits per night” than in the third\_obs family provided in the v1.5 release, with a more precise timing interval for the third visit in the night and a higher fraction of visits in ‘triplets’.
 \begin{itemize}
-\item Triplets obtained with initial pair in g+r, r+i, or i+z. triplet gaps of 1.5, 2.0, 2.5, 3.0, 3.5, and 4.0 hours
-\item Triplets obtained with initial pair in g+r, r+i, or i+z. triplet gaps of 1.5, 2.0, 2.5, 3.0, 3.5, and 4.0 hours. Triplets only obtained every-other night
-\item Triplets obtained with initial pair in g+i, r+z, or i+y. triplet gaps of 1.5, 2.0, 2.5, 3.0, 3.5, and 4.0 hours
-\item Triplets obtained with initial pair in g+i, r+z, or i+y. triplet gaps of 1.5, 2.0, 2.5, 3.0, 3.5, and 4.0 hours. Triplets only obtained every-other night
+\item Triplets obtained with initial pair in g+r, r+i, or i+z. triplet gaps between 1.5 and 4 hours, triplets obtained either every night, or every other night
+\item Triplets obtained with initial pair in g+i, r+z, or i+y. triplet gaps between 1.5 and 4 hours, triplets obtained either every night or every other night
 \end{itemize}
 
 \subsection{Long Gaps:}
 These simulations are in response to the Bellm cadence note, which advocates for varying the time between pairs of visits starting after a few years (allowing the majority of solar system objects to be discovered in the first years of the survey, before switching to variable pair intervals). There are a wide variety of potential methods to implement these longer gaps between visits. For some of the simulations, we simply vary the interval between pairs from 2-7 hours (instead of the standard 33 minutes in the baseline). For some of the simulations, we keep the baseline pair but add a third visit at a long spacing (longer than in the Presto-Color family), between 2-14 hours.  A further variation is when or how often to run these long-interval pairs; throughout the entire survey or only starting after five years of standard surveying, and every night or every few nights. The options we have chosen to simulate here, hoping to span a reasonable range to show areas of future potential include:
 \begin{itemize}
-\item Variable visit spacing between 2-7 hours. Running long spacing every 1,2,3,4,5,6 or 7 days
-\item Variable visit spacing between 2-7 hours. Running long spacing every 1,2,3,4,5,6 or 7 days, starting after year 5
-\item Variable visit spacing between 2-7 hours where the initial visit is unpaired. Running long spacing every 1,2,3,4,5,6 or 7 days
-\item Variable visit spacing between 2-7 hours where the initial visit is unpaired. Running long spacing every 1,2,3,4,5,6 or 7 days, starting after year 5 
+\item Variable visit spacing between 2-7 hours. The long spaced visits are obtained on every night up to every 7 nights.
+\item Variable visit spacing between 2-7 hours. The long spaced visits are obtained on every night up to every 7 nights, but start after year 5.
+\item Variable visit spacing between 2-7 hours where the initial visit is unpaired. The long spaced visits are obtained on every night up to every 7 nights. 
+\item Variable visit spacing between 2-7 hours where the initial visit is unpaired. The long spaced visits are obtained on every night up to every 7 nights, but start after year 5.
 \end{itemize}
 
 \subsection{Variable Exposure Time:}
@@ -244,6 +242,7 @@ There are a large number of the so-called micro-surveys proposed in the 2018 whi
 
 The survey simulations outlined above are our best estimates of what these variations will encompass, with an approximation of the total number of simulations. These descriptions may be modified, and extended by additional simulations, when generating the set of v2.0 simulations. 
  
+ More information about the actual runs simulated is available online at \url{https://github.com/lsst-pst/survey_strategy/blob/main/fbs_2.0/SummaryInfo_v2.0.ipynb}, in the 'SummaryInfo_v2.0' notebook. 
  
 \vskip 0.4in
 
