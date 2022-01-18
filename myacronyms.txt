@@ -5,3 +5,8 @@
 #
 # Example:
 #   MIA:Missing In Action
+GP:Galctic Plane
+ToO:Target of Opportunity
+SMC:Small Magellanic Cloud
+LMC:Large Magellanic Cloud
+MCs:Magellanic Clouds

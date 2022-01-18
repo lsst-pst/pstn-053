@@ -1,6 +1,6 @@
 \section{Background and SCOC Process}
 
-The core observing strategy for LSST is to cover large parts of the visible sky repeatedly every few days, in multiple bandpasses, over the course of ten years. The main survey (wide-fast-deep, WFD) has a design area of about 18,000 square degrees, to be observed under a wide range of conditions, giving faint co-added limiting magnitudes in ugrizy bandpasses. This survey will enable dark energy and dark matter cosmological studies and studies of the Milky Way structure with unprecedented precision; the same survey, when properly cadenced, can serve to open new windows into our understanding of transient sources and variable stars, and extend our knowledge of small bodies throughout the Solar System. The majority of available observing time will be spent on WFD; per the LSST Science Requirements Document (SRD, ls.st/srd) of the order 10\% of time will be spent on programs designed to maximize the science outcomes of LSST by exploring parameter space different from WFD. 
+The core observing strategy for LSST is to cover large parts of the visible sky repeatedly every few days, in multiple bandpasses, over the course of ten years. The main survey (wide-fast-deep, WFD) has a design area of about 18,000 square degrees, to be observed under a wide range of conditions, giving faint co-added limiting magnitudes in $ugrizy$ bandpasses. This survey will enable dark energy and dark matter cosmological studies and studies of the Milky Way structure with unprecedented precision; the same survey, when properly cadenced, can serve to open new windows into our understanding of transient sources and variable stars, and extend our knowledge of small bodies throughout the Solar System. The majority of available observing time will be spent on WFD; per the LSST Science Requirements Document (SRD, ls.st/srd) of the order 10\% of time will be spent on programs designed to maximize the science outcomes of LSST by exploring parameter space different from WFD. 
 
 The basic necessary requirements to reach LSST science goals are listed in the SRD. A practical implementation of the observing strategy has more tunable parameters than specified in the SRD, thus leaving significant flexibility in the detailed cadence of observations. In order to maximize the science potential of LSST, the Rubin Observatory Construction and Early Operations teams have been collaborating with the LSST science community and other stakeholders from the start of the project, using a variety of approaches. They include a living collaborative document named the Community Observing Strategy Evaluation Paper, solicited Cadence White Papers and Cadence Notes, numerous performance metrics used to evaluate simulated surveys, and guidance from the LSST Science Advisory Committee (SAC) and SCOC. This pioneering process of community-focused experimental design is discussed in more detail by Bianco et al. (2021, arXiv/2108.01683). 
 
@@ -53,8 +53,8 @@ A number of "proposals" were submitted in response to the 2019 Cadence White Pap
 1) short twilight visits for near-Sun objects incl. NEOs      &   1-3\%  \\
 2) ToO follow-up to ID counterparts to GW sources           &  1-2\% \\
 3) mini-survey/DDF of Roman microlensing bulge field      &   ~2\% \\ 
-4) Limited-visit survey of sky to Dec < +30                          &    1\% \\ 
-5) static short exposure map of sky in ugrizy                     &  ~1\% \\
+4) limited-visit survey of sky to Dec < +30                          &    1\% \\ 
+5) static short exposure map of sky in $ugrizy$                     &  ~1\% \\
 6) static to transient short exposure survey                         & 1-5\% \\
 7) mini-survey of the virgo cluster to WFD depth                 &  ~1\% \\
 8) deeper g-band imaging of ~ 10 local volume galaxies     & 0.3\% \\
@@ -63,30 +63,30 @@ A number of "proposals" were submitted in response to the 2019 Cadence White Pap
 \end{tabular}
 \end{table}
   
-Together, they correspond to about 12\% of observing time. The SCOC recommends to produce a family of simulations analogous to the baseline cadence where these proposals are individually, and to analyze them to assess the impact of their inclusion on various science performance metrics. Once this information is available, the final decision about these proposals, and the competing DDF cadences (currently allocated about 5\% of total observing time), can be included in phase 2 recommendations. It is noteworthy that there are no compelling reasons why any of these proposals must be attempted during the first year of operations, when the system performance might not be completely quantified. Therefore, this decision can also be revisited once a better understanding of the system is achieved.
+Together, they correspond to about 12\% of observing time. The SCOC recommends producing a family of simulations analogous to the baseline cadence where each of these proposals are individually included, and to analyze them to assess the impact of their inclusion on various science performance metrics. Once this information is available, the final decision about these proposals, and the competing DDF cadences (currently allocated about 5\% of total observing time), can be included in phase 2 recommendations. It is noteworthy that there are no compelling reasons why any of these proposals must be attempted during the first year of operations, when the system performance might not be completely quantified. Therefore, this decision can also be revisited once a better understanding of the system is achieved.
 
 While the special case to be investigated in the simulations above is for follow-up to identify optical counterparts of gravitational wave sources, in Operations, Rubin Observatory does expect to make time available at the few percent level to execute community based target of opportunity (ToO) observations. These observations will be proposed by the community of data rights holders for peer review (for example through the NOIRLab time allocation committee, TAC, process). While the proposal process allows community members to drive what will be done, the resulting data sets from all ToO proposals executed by Rubin will be made available to the entire data rights community at the same time (Rubin is considering whether to release ToOs to the world as is done with the realtime alert stream). Rubin expects to make fully defined processes for ToO and perhaps other community proposed observations available to the community well in advance of the start of full survey operations.
 
 There were also white papers and cadence notes submitted that requested less than ~0.3\% of the observing time, including requests of as little as 1 night of observing time (~0.03\%). Since the SCOC is not currently making recommendations for optimizing the survey at this level, these specific proposals will not be included in our phase 1 or 2 recommendations. However, the SCOC recommends that a small amount of observing time is allocated to such requests via a call for proposals to be issued after commissioning, when there is an improved quantitative understanding of the system performance. 
 
-{\it Q3:  Are there any science drivers that would strongly argue for, or against, the proposal to change the u band exposure from 2x15 sec to 1x50 sec? }
+{\it Q3:  Are there any science drivers that would strongly argue for, or against, the proposal to change the $u$ band exposure from 2x15 sec to 1x50 sec? }
 
 Findings and recommendations:
 
-Due to the dark sky in the u band, the impact of read-out noise is the largest in this band. Increasing the exposure time would improve the depth more rapidly than given by the canonical  square root of time scaling: if the u band exposure time changed from 2x15 sec to 1x50 sec, the single visit u band depth would improve by 0.5-0.6 mag\footnote{The increase of per-visit time (with overheads) from 39 sec (15+1+2+15+1+5, where 1 sec is for shutter motion, 2 sec for the first readout, with the second readout include in the typical slew time of 5 sec) to 56 sec (50+1+5), or by 44\%, would correspond effectively to an increase of observing time by almost a factor of 3 using the square root of time scaling of limiting magnitude (which is approximately correct in other bands). }
+Due to the dark sky in the $u$ band, the impact of read-out noise is the largest in this band. Increasing the exposure time would improve the depth more rapidly than given by the canonical  square root of time scaling: if the $u$ band exposure time changed from 2x15 sec to 1x50 sec, the single visit $u$ band depth would improve by 0.5-0.6 mag\footnote{The increase of per-visit time (with overheads) from 39 sec (15+1+2+15+1+5, where 1 sec is for shutter motion, 2 sec for the first readout, with the second readout include in the typical slew time of 5 sec) to 56 sec (50+1+5), or by 44\%, would correspond effectively to an increase of observing time by almost a factor of 3 using the square root of time scaling of limiting magnitude (which is approximately correct in other bands). }
 
-In the nominal per-band observing time allocation, the u band receives 56 visits out of 825 visits for all bands (about 7\% of total time). If the total time allocated to the u band were kept constant, the resulting number of visits would drop to 39. If instead the number of visits were kept constant, the additional 3-4\% of total observing time would have to be reallocated from other bands. For example, if 2\% of total observing time would be taken from the g and r bands, which are each allocated 22\% of total, the net relative effect for these bands would be about 10\% decrease in the number of visits (or equivalently about 0.08 single visit depth loss if the exposure time per visit was decreased by 2\% with the number of visits unchanged). 
+In the nominal per-band observing time allocation, the $u$ band receives 56 visits out of 825 visits for all bands (about 7\% of total time). If the total time allocated to the $u$ band were kept constant, the resulting number of visits would drop to 39. If instead the number of visits were kept constant, the additional 3-4\% of total observing time would have to be reallocated from other bands. For example, if 2\% of total observing time would be taken from the $g$ and $r$ bands, which are each allocated 22\% of total, the net relative effect for these bands would be about 10\% decrease in the number of visits (or equivalently about 0.08 single visit depth loss if the exposure time per visit was decreased by 2\% with the number of visits unchanged). 
 
-The main science drivers for deeper u band data are photometric redshift estimates for galaxies and photometric metallicity estimates for stars earlier than MK spectral type K.  Deeper u band data are also beneficial for identifying quasars and for studying stellar flares.
+The main science drivers for deeper $u$ band data are photometric redshift estimates for galaxies and photometric metallicity estimates for stars earlier than MK spectral type K.  Deeper $u$ band data are also beneficial for identifying quasars and for studying stellar flares.
 
-The SCOC recommends that the u band visits include only a single snap. There should be two flavors of new baseline simulations: with 1x30 sec and 1x50 sec exposures, with the latter exploring both unchanged number of visits and unchanged total observing time in the u band. Aided by analysis of these simulations, the final choice will be left to phase 2 optimization. The key question will be whether additional time allocated to the u band with 1x50 sec exposures will have an unacceptable impact on observations in the g band (and possibly in the r band). We note that it is plausible that the ultimate choice could depend on Galactic latitude (differing between the low-extinction and higher-extinction portion of WFD).
+The SCOC recommends that the $u$ band visits include only a single snap. There should be two flavors of new baseline simulations: with 1x30 sec and 1x50 sec exposures, with the latter exploring both unchanged number of visits and unchanged total observing time in the $u$ band. Aided by analysis of these simulations, the final choice will be left to phase 2 optimization. The key question will be whether additional time allocated to the $u$ band with 1x50 sec exposures will have an unacceptable impact on observations in the $g$ band (and possibly in the $r$ band). We note that it is plausible that the ultimate choice could depend on Galactic latitude (differing between the low-extinction and higher-extinction portion of WFD).
 
 
 {\it Q4:  Are there any science drivers that would strongly argue for, or against, further changes in observing time allocation per band (e.g., skewed much more towards the blue or the red side of the spectrum)? }
 
 Findings and recommendations:
 
-There are no strong arguments for significantly changing the default per-band allocation of observing time. Of the submitted cadence notes that favored changing the filter allocation, there was a weak preference for improved bluer coverage, primarily in the g band (driven by studies involving star-forming galaxies, blue transients, and turn-off stars in the Milky Way). In order to quantitatively gauge the impact of changing the per band allocation, a small number of new simulations will be produced by modifying the new baseline to produce a larger number of visits in the g band for the main low-extinction survey. Detailed per-band optimization of specific regions, such as the North Ecliptic Spur and Galactic Plane/Bulge, will be left for phase 2 optimization of the adopted baseline strategy. 
+There are no strong arguments for significantly changing the default per-band allocation of observing time. Of the submitted cadence notes that favored changing the filter allocation, there was a weak preference for improved bluer coverage, primarily in the $g$ band (driven by studies involving star-forming galaxies, blue transients, and turn-off stars in the Milky Way). In order to quantitatively gauge the impact of changing the per band allocation, a small number of new simulations will be produced by modifying the new baseline to produce a larger number of visits in the $g$ band for the main low-extinction survey. Detailed per-band optimization of specific regions, such as the North Ecliptic Spur and Galactic Plane/Bulge, will be left for phase 2 optimization of the adopted baseline strategy. 
 
 
 {\it Q5:  Are there any science drivers that would strongly argue for, or against, obtaining two visits in a pair in the same (or different) filter? Or the benefits or drawbacks of dedicating  a portion of each night to obtaining a third (triplet) visit?   }
@@ -131,7 +131,7 @@ The next phase of survey strategy simulations consists of a limited set of surve
             limits for  the WFD region, exact definition of the Galactic bulge region, see below for 
             more details)}
 \item{Decide which different filters should be used in pairs of visits}
-\item{Decide the exposure duration and the number of visits in u band }
+\item{Decide the exposure duration and the number of visits in $u$ band }
 \item{Optimize further the rolling cadence implementation }
 \item{Optimize further DDF cadences }
 \end{itemize}
@@ -150,11 +150,11 @@ This simulation is an update of the baseline survey plan. Further numerical deta
 \end{itemize}
 This would comprise the ‘core’ survey footprint area, together with the five Deep Drilling fields (DDF), as shown in Figure~\ref{fig:baseline_v2.0_footprint}. The location of four of these DDFs was announced in 2011, while the adoption of the fifth DDF, which matches the Euclid Deep Field South, was recommended by the Survey Advisory Committee and agreed by the Operations Director in 2020, pending demonstration of feasibility. 
 
-Visits in $grizy$ bands will be 2x15s, while visits in u band will be 1x30s. During twilight, visits will be taken in pairs with a 15 minute separation, instead of in singles as in the v1.X series baselines. During the remainder of the night, visits will be in pairs with approximately a 33 minute separation (with mixed filters between the pair), instead of about 22 minute separations as in the v1.X series baselines.
+Visits in $grizy$ bands will be 2x15s, while visits in $u$ band will be 1x30s. During twilight, visits will be taken in pairs with a 15 minute separation, instead of in singles as in the v1.X series baselines. During the remainder of the night, visits will be in pairs with approximately a 33 minute separation (with mixed filters between the pair), instead of about 22 minute separations as in the v1.X series baselines.
 
-In the extragalactic (i.e., dust-extinction limited) WFD, a 2-band rolling cadence defined by declination will be implemented at approximately 90\% strength. The rolling cadence starts in approximately year 1.5 and ends at approximately year 8.5, to allow uninterrupted coverage of the entire sky in the first and last years of the survey. 
+In the extragalactic (i.e., dust-extinction limited) WFD, a 2-band rolling cadence defined by declination will be implemented at approximately 90\% strength. The rolling cadence starts in approximately year 1.5 and ends at approximately year 8.5, to allow uninterrupted coverage of the entire sky in the first and last years of the survey. A '2-band' rolling cadence means half of the sky is 'active' during the rolling period, while the other half is observed at a much lower 'background' level. The active sky is further split into a (separated) North and South region, to provide a wider range of options for alert followup. More variations on the rolling cadence are provided in the rolling cadence exploration families.
 
-Some questions regarding the general baseline footprint which will be left for the next stage of survey strategy tuning include details of the survey footprint definition such as the exact Declination or dust extinction limits for the extragalactic WFD or the exact definition of the limits for the bulge WFD region, details of the filter balance in each region, and the definition of which different filters should be used in pairs of visits.
+Some questions regarding the general baseline footprint which will be left for the next stage of survey strategy tuning include details of the survey footprint definition such as the exact Declination or dust extinction limits for the extragalactic WFD or the exact definition of the limits for the bulge WFD region, details of the filter balance in each region, and the definition of which different filters should be used in pairs of visits. 
 
 
 \begin{figure}[htbp]
@@ -170,13 +170,13 @@ Some questions regarding the general baseline footprint which will be left for t
 \subsection{Retro (comparison):}
 These runs are intended to serve as a comparison point with previous simulations, to allow easier comparison of metrics between versions of the scheduler/simulation.
 \begin{itemize} 
-\item A classic ‘traditional’ survey footprint but with v2.0 settings - a halfway point between the classic footprint and the updated variations in the new simulations. This uses the standard ‘traditional’ survey footprint used in baselines from v1.5 to 1.7.1, 2x15s visits in grizy and 1x30s in u band, with a 2-band rolling cadence in WFD.
+\item A classic ‘traditional’ survey footprint but with v2.0 settings - a halfway point between the classic footprint and the updated variations in the new simulations. This uses the standard ‘traditional’ survey footprint used in baselines from v1.5 to 1.7.1, 2x15s visits in $grizy$ and 1x30s in $u$ band, with a 2-band rolling cadence in WFD.
 \item A classic ‘traditional’ v1.5-v1.7.1 survey footprint and v1.7.1 settings. This run would be directly comparable to baseline\_nexp2\_v1.7.1\_10yrs, but run with the newest version of the simulator. It uses the standard ‘traditional’ survey footprint used in baselines from v1.5 to 1.7.1, 2x15s visits in all bands, no rolling cadence.
 \end{itemize}
 
 \subsection{Rolling Cadence:}
 These simulations add variations on the rolling cadence implementation. This is one of the largest areas that remains undecided with the new survey strategy. Many areas of science which may benefit from rolling cadence do not currently have quantitative metrics available. A metric related to SN detection indicates that a 2-band rolling cadence can significantly improve SN detection in the WFD, so a 2-band rolling cadence has been implemented in the low-extinction WFD region in the baseline. The impact of rolling cadence in the Galactic bulge or other mini-survey regions is not as clear, primarily due to a lack of relevant metrics. In addition to varying what regions and what fraction of the sky has rolling cadence, the strength of the rolling cadence is varied in this family. All simulations will use the updated baseline footprint 
-and other v2.0 survey parameters (such as 1x30s visits in u band, 2x15s visits in grizy). 
+and other v2.0 survey parameters (such as 1x30s visits in $u$ band, 2x15s visits in $grizy$). 
 
 The variations within this family include:
 \begin{itemize}
@@ -190,25 +190,25 @@ The variations within this family include:
 \end{itemize}
 Note that in each of these rolling cadence simulations ‘2-band’ is referring to the fraction of the sky which is ‘active’ in rolling at any time. 2-band means ½ of the sky is rolling; 3-band means ⅓ of the sky is rolling. In each of these cases, the active sky area is further split into a North and South region, to better manage alert follow-up. 
 
-\subsection{Longer u-band visits:}
-The u-band visit time in the baseline is 1x30s, to avoid the penalty from read-noise for 2x15s snaps in u where this is most impactful. This family varies the visit time for u band to 1x50s, with two options on top of the baseline survey: 
+\subsection{Longer $u$-band visits:}
+The $u$-band visit time in the baseline is 1x30s, to avoid the penalty from read-noise for 2x15s snaps in $u$ where this is most impactful. This family varies the visit time for $u$ band to 1x50s, with two options on top of the baseline survey: 
 \begin{itemize}
-\item Longer u-band visit time, and approximately the same number of visits in u as in the baseline. This requires more survey time to be spent on u-band, so a few \% of time is removed from other bandpasses (altering the filter balance slightly). 
-\item Longer u-band visit time, but the same relative amount of survey time. This reduces the number of visits in u-band accordingly.
+\item Longer $u$-band visit time, and approximately the same number of visits in $u$ as in the baseline. This requires more survey time to be spent on $u$-band, so a few \% of time is removed from other bandpasses (altering the filter balance slightly). 
+\item Longer $u$-band visit time, but the same relative amount of survey time. This reduces the number of visits in $u$-band accordingly.
 \end{itemize} 
 
 \subsection{More blue band visits:}
-This family increases the time spent primarily in g (and u) for the low-extinction WFD. The u visits are kept at 1x30s: 
+This family increases the time spent primarily in $g$ (and $u$) for the low-extinction WFD. The $u$ visits are kept at 1x30s: 
 \begin{itemize}
-\item Increase the fraction of visits in g from 9\% to 12\%, while keeping u at ~ 7\%
-\item Increase the fraction of visits in g from 9\% to 11\% and increase u to ~ 8\%
+\item Increase the fraction of visits in $g$ from 9\% to 12\%, while keeping $u$ at ~ 7\%
+\item Increase the fraction of visits in $g$ from 9\% to 11\% and increase $u$ to ~ 8\%
 \end{itemize}
 
 \subsection{NES visits:}
 The number of visits per pointing (and corresponding fraction of overall survey time) for the Northern Ecliptic Spur mini-survey is varied in this family of simulations. The overall survey footprint remains the same. The goal for the number of visits per pointing in the NES is approximately 30\% of the WFD in the baseline. This family varies the number of visits per pointing in the NES from 1 to 100\% relative to the WFD. 
 
 \subsection{High dust extinction galactic plane visits: }
-The number of visits per pointing (and the corresponding fraction of overall survey time) for the non-bulge regions of the Galactic plane (galactic plane mini-survey or `high dust extinction galactic plane') is varied in this family of simulations. The overall survey footprint remains the same. The goal number of visits per pointing in the non-bulge GP is approximately 27\% of WFD baseline visits per pointing in the baseline.  This family varies the number of visits per pointing in the non-bulge high extinction galactic plane from 1 to 100\% relative to the WFD.
+The number of visits per pointing (and the corresponding fraction of overall survey time) for the non-bulge regions of the Galactic Plane (GP, Galactic Plane mini-survey or `high dust extinction galactic plane') is varied in this family of simulations. The overall survey footprint remains the same. The goal number of visits per pointing in the non-bulge GP is approximately 27\% of WFD baseline visits per pointing in the baseline.  This family varies the number of visits per pointing in the non-bulge high extinction galactic plane from 1 to 100\% relative to the WFD.
 
 \subsection{Deep Drilling fraction:}
 The fraction of time spent on DD fields has been held constant at about 5\% evenly spread over the 5 DDF pointings in simulations v1.5 - 1.7.1. This family keeps the baseline survey strategy, but modifies the fraction of time spent on DDFs by a modest amount; the remainder of the survey footprint varies evenly up or down as the DDF fraction changes).
@@ -216,10 +216,10 @@ The fraction of time spent on DD fields has been held constant at about 5\% even
 We note that the current implementation of DDF cadences is rather simplistic and requires further optimization, e.g., along the lines discussed in Lochner et al. Cadence Note. Our future DDF scheduling will use Mixed Integer Programming, making it easier to specify detailed cadences as well as try rolling cadence with the DDFs.
 
 \subsection{Presto Color:}
-The presto-color family could potentially cover a wide range of variations. The baseline survey strategy is modified so that triplets of visits are obtained in some nights, adding a third visit in a filter used earlier in the night in a pair. The triplet visit goal gap is varied per run, with values of 1.5, 2.0, 2.5, 3.0, 3.5, and 4.0 hours. As more visits are obtained in triplets, the overall number of visits per pointing or season length does not change; this drives the inter-night gap to slightly longer intervals; adding triplets for all visits throughout the survey is impractical for this reason, as it decreases for transients and variability. This is a slightly different implementation of “triplet visits per night” than in the third\_obs family provided in the v1.5 release, with a more precise timing interval for the third visit in the night and a higher fraction of visits in ‘triplets’.
+The presto-color family could potentially cover a wide range of variations. The baseline survey strategy is modified so that triplets of visits are obtained in some nights, adding a third visit in a filter used earlier in the night in a pair. The triplet visit goal gap is varied per run, with values of 1.5, 2.0, 2.5, 3.0, 3.5, and 4.0 hours. As more visits are obtained in triplets, the overall number of visits per pointing or season length does not change; this drives the inter-night gap to slightly longer intervals. This is a slightly different implementation of “triplet visits per night” than in the third\_obs family provided in the v1.5 release, with a more precise timing interval for the third visit in the night and a higher fraction of visits in ‘triplets’.
 \begin{itemize}
-\item Triplets obtained with initial pair in g+r, r+i, or i+z. triplet gaps between 1.5 and 4 hours, triplets obtained either every night, or every other night
-\item Triplets obtained with initial pair in g+i, r+z, or i+y. triplet gaps between 1.5 and 4 hours, triplets obtained either every night or every other night
+\item Triplets obtained with initial pair in $g+r$, $r+i$, or $i+z$. triplet gaps between 1.5 and 4 hours, triplets obtained either every night, or every other night
+\item Triplets obtained with initial pair in $g+i$, $r+z$, or $i+y$. triplet gaps between 1.5 and 4 hours, triplets obtained either every night or every other night
 \end{itemize}
 
 \subsection{Long Gaps:}
@@ -241,11 +241,11 @@ There are a large number of the so-called micro-surveys proposed in the 2018 whi
 \item Annual 1-week survey of the Carina nebula and surrounding star forming regions
 \item ToO follow-up to identify optical counterparts of gravitational wave sources
 \item Micro survey of Roman microlensing bulge field
-\item Addition of a northern stripe with a limited number of visits in ugrizy from the upper limit of the survey footprint to Dec=30
-\item Single short (5s) exposure survey of the sky in ugrizy in year 1 for static sky calibration %short_exp
-\item Multiple short exposures of the sky in ugrizy at a range of times for transient detection and static sky calibration %multi_short
+\item Addition of a northern stripe with a limited number of visits in $ugrizy$ from the upper limit of the survey footprint to Dec=30
+\item Single short (5s) exposure survey of the sky in $ugrizy$ in year 1 for static sky calibration %short_exp
+\item Multiple short exposures of the sky in $ugrizy$ at a range of times for transient detection and static sky calibration %multi_short
 \item Adding the Virgo Cluster to the WFD footprint
-\item Deeper g-band imaging of 10 local volume galaxies
+\item Deeper $g$-band imaging of 10 local volume galaxies
 \item High cadence visits of 2 fields in the SMC for microlensing
 \end{itemize}
 
@@ -262,10 +262,10 @@ The survey simulations outlined above are our best estimates of what these varia
 \begin{tabular}{l | L | l}
 Family               & Brief Description       &    \# sims.   \\
 \hline\hline
-Baseline            & Updated survey footprint, 2x15s visits in grizy and 1x30s in u, 2-band rolling in WFD. &   1     \\
+Baseline            & Updated survey footprint, 2x15s visits in $grizy$ and 1x30s in $u$, 2-band rolling in WFD. &   1     \\
 Retro comparison     & A comparison bridge point between v1.X and v2.0  & 2 \\
 Rolling cadence      & Variations on the rolling cadence   & 13  \\
-Longer u visits  & Extend  u-band visit time is extended to 1x50s    &    2 \\
+Longer $u$ visits  & Extend $u$-band visit time to 1x50s    &    2 \\
 More blue visits & Shift visits into bluer filters & 2 \\
 NES visits & Vary the fraction of time spent on the NES & 14 \\
 GP visits & Vary the fraction of time spent on the low-priority (non-bulge) regions of the GP & 14 \\
@@ -282,7 +282,7 @@ Micro surveys & Add various micro-surveys from white papers  & 10 \\
 
 \section{Metrics}
 
-The SCOC strongly encourages the community to contribute science-motivated metrics, particularly to aid in evaluating the benefits or impacts of intra-night (presto-color and long visit gaps) and rolling cadence. The potential gains related to adding any of the micro-surveys (and thus removing time from the core survey) generally also need additional metrics. Metrics which bear on the survey footprint and its impact on evaluating Galactic structure would also be extremely helpful, for determining the extent of the WFD region in the Bulge and the coverage in the GP mini-survey. Many cadence notes were qualitative or did not have quantitative metrics ready that were fully incorporated into the Metric Analysis Framework (MAF). Without these metrics in MAF, they cannot be automatically run by the Rubin Observatory Scheduler Team when the new cadence simulations are available. The SCOC strongly encourages the community to liaise with the Rubin Observatory scheduler team to finalize metrics currently in development. Metrics that are not incorporated into MAF before Feb 2022 risk not being included in the SCOC’s Phase 2 deliberations. We also encourage groups to provide metrics that offer clear direction to optimize the science return for a given group, to assist the SCOC in comparing MAF output across the many areas of scientific interest. Similarly, we support the coordination of metrics between Science Collaborations to collate available metrics, aid their development into MAF, and provide wider linkages between metrics and scientific interest. 
+The SCOC strongly encourages the community to continue to contribute science-motivated metrics, particularly to aid in evaluating the benefits or impacts of intra-night (presto-color and long visit gaps) and rolling cadence. The potential gains related to adding any of the micro-surveys (and thus removing time from the core survey) generally also need additional metrics. Metrics which bear on the survey footprint and its impact on evaluating Galactic structure would also be extremely helpful, for determining the extent of the WFD region in the Bulge and the coverage in the GP mini-survey. Many cadence notes were qualitative or did not have quantitative metrics ready that were fully incorporated into the Metric Analysis Framework (MAF). Without these metrics in MAF, they cannot be automatically run by the Rubin Observatory Scheduler Team when the new cadence simulations are available.  The SCOC strongly encourages the community and the Rubin Observatory scheduler team to liaise and work together to organize the metrics currently in development. Metrics that are not incorporated into MAF before Feb 2022 risk not being included in the SCOC’s Phase 2 deliberations. Similarly, we support the coordination of metrics between Science Collaborations to collate available metrics, aid their development into MAF, and provide wider linkages between metrics and scientific interest. 
 
 \section{SCOC membership}
 
