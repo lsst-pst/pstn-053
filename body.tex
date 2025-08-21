@@ -46,22 +46,26 @@ There is no broad consensus for the 10\% usage between different science groups,
 
 A number of "proposals" were submitted in response to the 2019 Cadence White Paper Call or the 2021 Cadence Note Call that were deemed "small" (so-called ‘micro-surveys’) because the implied use of observing time is at the level of a few \% or less. These micro-surveys are further divided into two groups; those requesting 0.3-3\% of the total observing time and those that requested < 0.3\% of the total observing time. The micro-surveys requesting above approximately 0.3\% of the total survey time include the following nine proposals that the SCOC recommends for simulation in phase 2:
 
-\begin{table}[h]
-\begin{tabular}{l | l}
-             -- short description --             &                          -- obs. time -- \\
-\hline
-1) short twilight visits for near-Sun objects incl. NEOs      &   1-3\%  \\
-2) ToO follow-up to ID counterparts to GW sources           &  1-2\% \\
-3) mini-survey/DDF of Roman microlensing bulge field      &   ~2\% \\
-4) limited-visit survey of sky to Dec < +30                          &    1\% \\
-5) static short exposure map of sky in $ugrizy$                     &  ~1\% \\
-6) static to transient short exposure survey                         & 1-5\% \\
-7) mini-survey of the virgo cluster to WFD depth                 &  ~1\% \\
-8) deeper g-band imaging of ~ 10 local volume galaxies     & 0.3\% \\
-9) high cadence survey of ~2 fields in SMC for microlenses&  0.3\% \\
-\hline
-\end{tabular}
-\end{table}
+\begin{deluxetable*}{l r}
+\tabletypesize{\footnotesize} % adjust font size if needed
+\tablewidth{0pt}
+\tablecaption{Example micro-survey observing time allocations.\label{tab:microsurveys}}
+\tablehead{
+\colhead{Short description} & \colhead{Obs.\ time}
+}
+\startdata
+1) short twilight visits for near-Sun objects incl.\ NEOs      & 1--3\% \\
+2) ToO follow-up to ID counterparts to GW sources              & 1--2\% \\
+3) mini-survey/DDF of Roman microlensing bulge field           & $\sim$2\% \\
+4) limited-visit survey of sky to Dec $<+30$                   & 1\% \\
+5) static short exposure map of sky in $ugrizy$                & $\sim$1\% \\
+6) static to transient short exposure survey                   & 1--5\% \\
+7) mini-survey of the Virgo cluster to WFD depth               & $\sim$1\% \\
+8) deeper $g$-band imaging of $\sim$10 local volume galaxies   & 0.3\% \\
+9) high cadence survey of $\sim$2 fields in SMC for microlenses& 0.3\% \\
+\enddata
+\end{deluxetable*}
+
 
 Together, they correspond to about 12\% of observing time. The SCOC recommends producing a family of simulations analogous to the baseline cadence where each of these proposals are individually included, and to analyze them to assess the impact of their inclusion on various science performance metrics. Once this information is available, the final decision about these proposals, and the competing DDF cadences (currently allocated about 5\% of total observing time), can be included in phase 2 recommendations. It is noteworthy that there are no compelling reasons why any of these proposals must be attempted during the first year of operations, when the system performance might not be completely quantified. Therefore, this decision can also be revisited once a better understanding of the system is achieved.
 
@@ -157,13 +161,13 @@ In the extragalactic (i.e., dust-extinction limited) WFD, a 2-band rolling caden
 Some questions regarding the general baseline footprint which will be left for the next stage of survey strategy tuning include details of the survey footprint definition such as the exact Declination or dust extinction limits for the extragalactic WFD or the exact definition of the limits for the bulge WFD region, details of the filter balance in each region, and the definition of which different filters should be used in pairs of visits.
 
 
-\begin{figure}[htbp]
+\begin{figure*}[htb!]
 \begin{center}
-\includegraphics[width=0.8\textwidth]{baseline_v2_0_10yrs_Nvisits_HEAL_SkyMap}
+\plotone{baseline_v2_0_10yrs_Nvisits_HEAL_SkyMap}
 \caption{Baseline v2.0 survey simulation, number of visits in all filters.}
 \label{fig:baseline_v2.0_footprint}
 \end{center}
-\end{figure}
+\end{figure*}
 
 
 
@@ -254,31 +258,30 @@ The survey simulations outlined above are our best estimates of what these varia
  More information about the actual runs simulated is available online at \url{https://github.com/lsst-pst/survey_strategy/blob/main/fbs_2.0/SummaryInfo_v2.0.ipynb}, in the
  `SummaryInfo\_v2.0' notebook.
 
-\vskip 0.4in
-
-\newcolumntype{L}{>{}p{0.7\columnwidth}}
-
-\begin{table}[]
-\begin{tabular}{l | L | l}
-Family               & Brief Description       &    \# sims.   \\
-\hline\hline
-Baseline            & Updated survey footprint, 2x15s visits in $grizy$ and 1x30s in $u$, 2-band rolling in WFD. &   1     \\
-Retro comparison     & A comparison bridge point between v1.X and v2.0  & 2 \\
-Rolling cadence      & Variations on the rolling cadence   & 13  \\
-Longer $u$ visits  & Extend $u$-band visit time to 1x50s    &    2 \\
+\begin{deluxetable*}{l l r}
+\tabletypesize{\footnotesize} % adjust or remove as needed
+\tablewidth{0pt} % natural width; AASTeX will size columns
+\tablecaption{Summary of Simulation Families\label{tab:shortlist}}
+\tablehead{
+\colhead{Family} & \colhead{Brief Description} & \colhead{\# sims.}
+}
+\startdata
+Baseline & Updated survey footprint, 2$\times$15s visits in $grizy$ and 1$\times$30s in $u$, 2-band rolling in WFD. & 1 \\
+Retro comparison & A comparison bridge point between v1.X and v2.0 & 2 \\
+Rolling cadence & Variations on the rolling cadence & 13 \\
+Longer $u$ visits & Extend $u$-band visit time to 1$\times$50s & 2 \\
 More blue visits & Shift visits into bluer filters & 2 \\
 NES visits & Vary the fraction of time spent on the NES & 14 \\
 GP visits & Vary the fraction of time spent on the low-priority (non-bulge) regions of the GP & 14 \\
 Deep Drilling fraction & Vary the fraction of time for DDFs & 2 \\
-Presto Color & Add triplets of visits at varying times or fractions  & 12 \\
-Long visit gaps & Vary the visit pair time between 2-10 hours after year 5  &  35 \\
-Micro surveys & Add various micro-surveys from white papers  & 10 \\
-\hline
- & Approximate total number of simulations &  120 \\
-\hline
-\end{tabular}
-\end{table}\label{tab:shortlist}
-
+Presto Color & Add triplets of visits at varying times or fractions & 12 \\
+Long visit gaps & Vary the visit pair time between 2--10 hours after year 5 & 35 \\
+Micro surveys & Add various micro-surveys from white papers & 10 \\
+\tableline
+\multicolumn{2}{r}{Approximate total number of simulations} & 120 \\
+\enddata
+%\tablecomments{Optional comment about the table.}
+\end{deluxetable*}
 
 \section{Metrics}
 
