@@ -1,0 +1,16 @@
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.toc
+authors.tex
+acronyms.tex
+meta.tex
+*.png
+*.out
+*.xdv
+PSTN-053.pdf
+*.glsdefs
+aglossary.tex
